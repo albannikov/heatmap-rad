@@ -17,83 +17,28 @@
     
 </head>
 
+<div class="container">
+    <header class="d-flex flex-wrap justify-content-center py-3 mb-4 border-bottom">
+      <a href="/" class="d-flex align-items-center mb-3 mb-md-0 me-md-auto text-dark text-decoration-none">
+        <svg class="bi me-2" width="40" height="32"><use xlink:href="#bootstrap"></use></svg>
+        <span class="fs-4">Simple header</span>
+      </a>
 
-<header>
-    <div class="px-3 py-2 bg-dark text-white">
-      <div class="container">
-        <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
-          <a href="/" class="d-flex align-items-center my-2 my-lg-0 me-lg-auto text-white text-decoration-none">
-            <svg class="bi me-2" width="40" height="32" role="img" aria-label="Bootstrap"><use xlink:href="#bootstrap"></use></svg>
-          </a>
-
-          <ul class="nav col-12 col-lg-auto my-2 justify-content-center my-md-0 text-small">
-            <li>
-              <a href="#" class="nav-link text-secondary">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#home"></use></svg>
-                Home
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#speedometer2"></use></svg>
-                Dashboard
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#table"></use></svg>
-                Orders
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#grid"></use></svg>
-                Products
-              </a>
-            </li>
-            <li>
-              <a href="#" class="nav-link text-white">
-                <svg class="bi d-block mx-auto mb-1" width="24" height="24"><use xlink:href="#people-circle"></use></svg>
-                Customers
-              </a>
-            </li>
-          </ul>
-        </div>
-      </div>
-    </div>
-    <div class="px-3 py-2 border-bottom mb-3">
-      <div class="container d-flex flex-wrap justify-content-center">
-        <form class="col-12 col-lg-auto mb-2 mb-lg-0 me-lg-auto">
-          <input type="search" class="form-control" placeholder="Search..." aria-label="Search">
-        </form>
-
-        <div class="text-end">
-          <button type="button" class="btn btn-light text-dark me-2">Login</button>
-          <button type="button" class="btn btn-primary">Sign-up</button>
-        </div>
-      </div>
-    </div>
-  </header>
+      <ul class="nav nav-pills">
+        <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+        <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+      </ul>
+    </header>
+  </div>
 
 <body>
     <div class="container-fluid pb-3">
         <div class="d-grid gap-3" style="grid-template-columns: 1fr 2fr;">
           <div class="bg-light border rounded-3">
-                   <!-- Работаем с файлом -->
-                   <div class="filespace">
-                    <input type="file" id="file">
-                       <button class="btn btn-primary">Чтение файла</button>
-                        <script>
-                        document.querySelector('button').addEventListener('click', function() {
-                        let file = document.getElementById('file').files[0];
-                        let reader = new FileReader();
-                        reader.readAsText(file);
-                        reader.onload = function() {console.log(reader.result);}
-                        reader.onerror = function(){console.log(reader.error); }
-                       })
-                        </script>
-                   </div>
-                   <!-- Работаем с файлом -->
+                   11
           </div>
           <div class="bg-light border rounded-3">
             <div class="hero-unit">
@@ -102,6 +47,24 @@
              
                 </div>
             </div>
+
+            <!-- Работаем с файлом -->
+            <div class="filespace">
+                <input type="file" id="file">
+                   <button class="btn btn-primary">Чтение файла</button>
+                    <script>
+                    document.querySelector('button').addEventListener('click', function() {
+                    let file = document.getElementById('file').files[0];
+                    let reader = new FileReader();
+                    reader.readAsText(file);
+                    reader.onload = function() {console.log(reader.result);}
+                    reader.onerror = function(){console.log(reader.error); }
+                   })
+                    </script>
+               </div>
+               <!-- Работаем с файлом -->
+
+               
           </div>
         </div>
       </div>   
