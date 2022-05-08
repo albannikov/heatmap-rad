@@ -1,0 +1,19 @@
+ html, body, .hero-unit {
+    min-height: 100%;
+    height: 100%;
+    margin: 0px;
+    background: #eef2f4;
+}
+
+.filespace {
+    padding: 20px 0 0 0;
+}
+
+#YMapsID {
+    width: 100%;
+    height: 500px;
+    padding: 20px 0 0 0;
+}
+#YMapsCode {
+    width: 880px;
+} 
