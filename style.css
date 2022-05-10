@@ -9,6 +9,11 @@
     background-color: white;
 }
 
+.left-menu {
+    background-color: rgb(44, 44, 44);
+    color:#eef2f4;
+}
+
 .filespace {
     padding: 20px 0 0 0;
 }
