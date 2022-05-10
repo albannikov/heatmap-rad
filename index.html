@@ -64,6 +64,27 @@
                </div>
                <!-- Работаем с файлом -->
 
+
+               <script>
+                const mysql = require("mysql");
+                const connection = mysql.createConnection({
+                  host: "45.12.19.33",
+                  user: "admin_admin",
+                  database: "admin_heartmap",
+                  password: "33Acbac77"
+                });
+                
+                const sql = `INSERT INTO points(TIPE, DATE, LOCATION, DESCRIPTION) VALUES (11,12,13,14)`;
+                            
+                
+                connection.query(sql, function(err, results) {
+                    if(err) console.log(err);
+                    console.log(results);
+                });
+                
+                connection.end();
+          </script>
+
                
           </div>
         </div>

@@ -5,6 +5,10 @@
     background: #eef2f4;
 }
 
+.header {
+    background-color: white;
+}
+
 .filespace {
     padding: 20px 0 0 0;
 }
