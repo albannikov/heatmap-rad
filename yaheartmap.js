@@ -3,7 +3,10 @@
             var map = new ymaps.Map('YMapsID', {
                     center: [62.134265, 77.458448],
                     controls: ['zoomControl', 'typeSelector',  'fullscreenControl'],
-                    zoom: 12, type: 'yandex#satellite'
+                    zoom: 12, type: 'yandex#map'                    
+                    // 'yandex#map' - тип карты "схема";
+                    // 'yandex#satellite' - тип карты "спутник";
+                    // 'yandex#hybrid' - тип карты "гибрид".
                 }),
 
                 buttons = {
@@ -75,6 +78,12 @@
                     opacity: opacities[2]
                 });
                 heatmap.setMap(map);
+
+            //     ymaps.modules.require(['Heatmap'], function (Heatmap) {
+            //         var data = [[37.782551, -122.445368], [37.782745, -122.444586]],
+            //             heatmap = new Heatmap(data);
+            //         heatmap.setMap(myMap);
+            //    }); 
 
                 buttons.dissipating.events.add('press', function () {
                     heatmap.options.set(
