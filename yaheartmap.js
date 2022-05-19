@@ -71,19 +71,38 @@
                 radiuses = [5, 10, 20, 30],
                 opacities = [0.4, 0.6, 0.8, 1];
 
+                var data = [
+                    [62.131339, 77.457447],
+                    [62.130305, 77.456293],
+                    [62.131339, 77.457447],
+                    [62.129052, 77.454904],
+                    [62.131339, 77.457447],
+                    [62.131339, 77.457447],
+                    [62.131339, 77.457447],
+                    [62.127178, 77.452819],
+                    [62.131726, 77.457323],
+                    [62.130909, 77.457638],
+                    [62.131195, 77.457839],
+                    [62.131402, 77.456940],
+                ];
+
+ 
+
+                // var TOWN = "<?php echo '1';?>";
+                // document.write(TOWN);
+                // // alert ('Город невест и молодежи: ' + );
+
+
+
             ymaps.modules.require(['Heatmap'], function (Heatmap) {
-                var heatmap = new Heatmap(data, {
+                    var heatmap = new Heatmap(data, {
                     gradient: gradients[0],
                     radius: radiuses[1],
                     opacity: opacities[2]
                 });
                 heatmap.setMap(map);
 
-            //     ymaps.modules.require(['Heatmap'], function (Heatmap) {
-            //         var data = [[37.782551, -122.445368], [37.782745, -122.444586]],
-            //             heatmap = new Heatmap(data);
-            //         heatmap.setMap(myMap);
-            //    }); 
+          
 
                 buttons.dissipating.events.add('press', function () {
                     heatmap.options.set(
