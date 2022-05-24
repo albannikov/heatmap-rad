@@ -19,7 +19,7 @@ try {
     }
     echo "</table>";
     $answer = $answer . ']';
-    echo $answer;
+    echo $answer; // получили все координаты из запроса
 }
 catch (PDOException $e) {
     echo "Database error: " . $e->getMessage();
