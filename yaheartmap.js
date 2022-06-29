@@ -1,16 +1,3 @@
-<<<<<<< HEAD
-   
-        ymaps.ready(async function () {
-            var map = new ymaps.Map('YMapsID', {
-                    center: [62.134265, 77.458448],
-                    controls: ['zoomControl', 'typeSelector',  'fullscreenControl'],
-                    zoom: 12, type: 'yandex#map'                    
-                    // 'yandex#map' - тип карты "схема";
-                    // 'yandex#satellite' - тип карты "спутник";
-                    // 'yandex#hybrid' - тип карты "гибрид".
-                }),
-=======
->>>>>>> b4cc0b96b6f7e9c80c12d0fbb0facf70bda519af
 
 /**
  * Get map points from backend
@@ -26,41 +13,12 @@ ymaps.ready(async function () {
     var map = new ymaps.Map('YMapsID', {
         center: [62.134265, 77.458448],
         controls: ['zoomControl', 'typeSelector',  'fullscreenControl'],
-        zoom: 12, type: 'yandex#map'                    
+        zoom: 12, type: 'yandex#map'
         // 'yandex#map' - тип карты "схема";
         // 'yandex#satellite' - тип карты "спутник";
         // 'yandex#hybrid' - тип карты "гибрид".
     }),
 
-<<<<<<< HEAD
-                var data1 = [
-                    [62.131339, 77.457447],
-                    [62.130305, 77.456293],
-                    [62.131339, 77.457447],
-                    [62.129052, 77.454904],
-                    [62.131339, 77.457447],
-                    [62.131339, 77.457447],
-                    [62.131339, 77.457447],
-                    [62.127178, 77.452819],
-                    [62.131726, 77.457323],
-                    [62.130909, 77.457638],
-                    [62.131195, 77.457839],
-                    [62.131402, 77.456940],
-                ];
-
-                let data  = [];
-
-
-
-                await setTimeout(() => {
-                    data = data1.map(i => i);
-                    console.log(data);
-                }, 2000)
-
-
-
- 
-=======
     buttons = {
         dissipating: new ymaps.control.Button({
             data: {
@@ -122,9 +80,8 @@ ymaps.ready(async function () {
     }],
     radiuses = [5, 10, 20, 30],
     opacities = [0.4, 0.6, 0.8, 1];
-    
+
     let data = await fetchData();
->>>>>>> b4cc0b96b6f7e9c80c12d0fbb0facf70bda519af
 
     // var TOWN = "<?php echo '1';?>";
     // document.write(TOWN);
@@ -136,13 +93,9 @@ ymaps.ready(async function () {
             radius: radiuses[1],
             opacity: opacities[2]
         });
-<<<<<<< HEAD
-
-
-=======
         heatmap.setMap(map);
 
-    
+
 
         buttons.dissipating.events.add('press', function () {
             heatmap.options.set(
@@ -182,4 +135,3 @@ ymaps.ready(async function () {
         }
     });
 });
->>>>>>> b4cc0b96b6f7e9c80c12d0fbb0facf70bda519af
