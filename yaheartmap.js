@@ -1,5 +1,5 @@
    
-        ymaps.ready(function () {
+        ymaps.ready(async function () {
             var map = new ymaps.Map('YMapsID', {
                     center: [62.134265, 77.458448],
                     controls: ['zoomControl', 'typeSelector',  'fullscreenControl'],
@@ -71,7 +71,7 @@
                 radiuses = [5, 10, 20, 30],
                 opacities = [0.4, 0.6, 0.8, 1];
 
-                var data = [
+                var data1 = [
                     [62.131339, 77.457447],
                     [62.130305, 77.456293],
                     [62.131339, 77.457447],
@@ -85,6 +85,17 @@
                     [62.131195, 77.457839],
                     [62.131402, 77.456940],
                 ];
+
+                let data  = [];
+
+
+
+                await setTimeout(() => {
+                    data = data1.map(i => i);
+                    console.log(data);
+                }, 2000)
+
+
 
  
 
@@ -142,3 +153,5 @@
                 }
             });
         });
+
+
