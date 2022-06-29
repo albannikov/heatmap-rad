@@ -32,50 +32,33 @@
 
 
 <body>
-  
-  
-    <div class="row main-block">
-      <div class="col-2 left-menu">
-        Боковое меню
-      </div>
-      <div class="col-10 hero-unit">
-      
-          <div class="container">   
-              <div id="YMapsID"></div>
-       
-          </div>
-      
-
+  <div class="row main-block">
+    <div class="col-2 left-menu">
+      Боковое меню
+    </div>
+    <div class="col-10 hero-unit">
+    
+    <div class="container">   
+      <div id="YMapsID"></div>
+    </div>
+    
+    <!-- Работаем с файлом -->
+    <div class="filespace">
+      <input type="file" id="file">
+      <button class="btn btn-primary">Чтение файла</button>
+      <script>
+        document.querySelector('button').addEventListener('click', function() {
+          let file = document.getElementById('file').files[0];
+          let reader = new FileReader();
+          reader.readAsText(file);
+          reader.onload = function() {console.log(reader.result);}
+          reader.onerror = function(){console.log(reader.error); }
+        })
+      </script>
+    </div>
       <!-- Работаем с файлом -->
-      <div class="filespace">
-          <input type="file" id="file">
-             <button class="btn btn-primary">Чтение файла</button>
-              <script>
-              document.querySelector('button').addEventListener('click', function() {
-              let file = document.getElementById('file').files[0];
-              let reader = new FileReader();
-              reader.readAsText(file);
-              reader.onload = function() {console.log(reader.result);}
-              reader.onerror = function(){console.log(reader.error); }
-             })
-              </script>
-         </div>
-         <!-- Работаем с файлом -->
-
-
-
-
-         <?php
-        include ('dbconnect.php');
-        ?>
-
-        
-   
- 
-  
+      <!-- <?php
+      include ('dbconnect.php');
+      ?> -->
 </body>
 </html>
-
-
-
-
