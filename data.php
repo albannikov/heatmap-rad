@@ -1,27 +1,38 @@
 <?php
-header('Content-Type: application/json; charset=utf-8');
+ header('Content-Type: application/json; charset=utf-8');
 
 
-/**
- * Тут стоит приконнектиться к базе, забрать данные 
- * и отдать их через echo json_encode($data);
- * 
- * Это просто синтетический пример
- */
-$data = [
-    [62,131339, 77.457447],
-    [62.130305, 77.456293],
-    [62.131339, 77.457447],
-    [62.129052, 77.454904],
-    [62.131339, 77.457447],
-    [62.131339, 77.457447],
-    [62.131339, 77.457447],
-    [62.127178, 77.452819],
-    [62.131726, 77.457323],
-    [62.130909, 77.457638],
-    [62.131195, 77.457839],
-    [62.131402, 77.456940],
-];
+require_once 'pdoconfig.php';
+
+try {
+    $conn = new PDO("mysql:host=$host;dbname=$dbname", $username, $password);
+    $sql = "SELECT * FROM points";
+    $result = $conn->query($sql);
+      echo '<table><tr><th>id</th><th>Тип</th><th>Дата</th><th>Координаты</th><th>Описание</th></tr>';
+     $data = array ();
+     $coordinates = array ();
+    // $data = '[';
+     while($row = $result->fetch()){
+        //  echo '<tr>';
+        //     echo '<td>' . $row["id"] . '</td>';
+        //     echo '<td>' . $row["TIPE"] . '</td>';
+        //     echo '<td>' . $row["DATE"] . '</td>';
+        //     echo '<td>' . $row["LOCATION"] . '</td>';
+             $data = $data . $row["LOCATION_WIDTH"] . ','; //широта
+             $data = $data . $row["LOCATION_LONG"] . ',';  //долгота
+             $coordinates [] = array((float)$row["LOCATION_WIDTH"], (float)$row["LOCATION_LONG"]); // наполняем многомерный массив   
+     }
+ }
 
 
-echo json_encode($data);
+catch (PDOException $e) {
+    echo "Database error: " . $e->getMessage();
+}
+
+
+
+ 
+//  $data = [[62,131339, 77.457447],[62.130305, 77.456293],[62.131339, 77.457447],[62.129052, 77.454904],[62.131339, 77.457447],[62.131339, 77.457447],[62.131339, 77.457447],];          
+$data = $coordinates;
+ echo json_encode($data);
+//  var_dump($data);
