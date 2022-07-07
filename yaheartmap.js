@@ -1,10 +1,22 @@
 
+
+
+    console.log('test');
+    
+    
+
 /**
  * Get map points from backend
  * @returns {Promise}
  */
 async function fetchData() {
     const response = await fetch('data.php');
+    const json = await response.json();
+    return json;
+}
+
+async function fetchNewData() {
+    const response = await fetch('datacopy.php');
     const json = await response.json();
     return json;
 }
@@ -83,17 +95,26 @@ ymaps.ready(async function () {
 
     let data = await fetchData();
 
-    // var TOWN = "<?php echo '1';?>";
-    // document.write(TOWN);
-    // // alert ('Город невест и молодежи: ' + );
-
     ymaps.modules.require(['Heatmap'], function (Heatmap) {
         var heatmap = new Heatmap(data, {
             gradient: gradients[0],
             radius: radiuses[1],
             opacity: opacities[2]
         });
+        heatmap.getData(map);
         heatmap.setMap(map);
+        
+
+        
+       
+buttonFiltr.onclick = async function() {    
+     let newData = await fetchNewData();
+     heatmap.setData(newData); 
+   
+  };
+
+
+
 
 
 
@@ -135,3 +156,6 @@ ymaps.ready(async function () {
         }
     });
 });
+
+
+

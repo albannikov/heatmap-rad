@@ -10,9 +10,9 @@
     <link rel="stylesheet" href="style.css">
 
     <script src="https://api-maps.yandex.ru/2.1/?lang=ru-RU" type="text/javascript"></script> <!-- Апи карт -->
-    <script src="Heatmap.min.js" type="text/javascript"></script>
-    <script src="data.js" type="text/javascript"></script> <!-- Тут хранятся точки -->
+    <script src="Heatmap.min.js" type="text/javascript"></script>   
     <script src="yaheartmap.js" type="text/javascript"></script> <!-- скрипт отрисовки Яндекса -->
+
 
     
 </head>
@@ -40,7 +40,14 @@
     
     <div class="container">   
       <div id="YMapsID"></div>
-    </div>
 
+      <button id = "buttonFiltr">Button</button></p>
+     
+      <?
+      include ("dbconnect.php");
+      ?>
+
+      
+    
 </body>
 </html>
